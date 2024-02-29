@@ -98,10 +98,16 @@ public class PlayerMovement : MonoBehaviour
 	{
 		// Move player
 		moveDirection = orientation.forward * keyboardInput.y + orientation.right * keyboardInput.x;
-		if (isGrounded){
+		if (isGrounded)
+		{
 			rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-		} else {
-			rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+		}
+		else
+		{
+			rb.AddForce(
+				moveDirection.normalized * moveSpeed * 10f * airMultiplier,
+				ForceMode.Force
+			);
 		}
 	}
 
