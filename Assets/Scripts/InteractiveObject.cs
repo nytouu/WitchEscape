@@ -9,6 +9,6 @@ public abstract class InteractiveObject : MonoBehaviour
 
     public virtual void Interact()
     {
-
+        Debug.Log("interact");
     }
 }

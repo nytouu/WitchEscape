@@ -18,7 +18,7 @@ public class FPSController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.visible = true;
         stateModeScript = FindObjectOfType<StateMode>();
     }
 
@@ -33,15 +33,21 @@ public class FPSController : MonoBehaviour
             mouseInput.x = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensitivity.x;
             mouseInput.y = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensitivity.y;
 
-            rotation.y += mouseInput.x;
+            transform.Rotate(Vector3.up, mouseInput.x);
+            Camera.main.transform.Rotate(Vector3.right * -mouseInput.y);
+
+
+            /*rotation.y += mouseInput.x;
             rotation.x -= mouseInput.y;
 
+            
+            
             // Clamp vertical
             rotation.x = Mathf.Clamp(rotation.x, -90f, 90f);
 
             // Apply rotation
             transform.rotation = Quaternion.Euler(rotation.x, rotation.y, 0);
-            orientation.rotation = Quaternion.Euler(0, rotation.y, 0);
+            orientation.rotation = Quaternion.Euler(0, rotation.y, 0);*/
         }
     }
 }
