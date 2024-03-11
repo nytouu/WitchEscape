@@ -9,23 +9,17 @@ public class OneshotObject : SimpleObject
 
     void Start()
     {
-        playerScale = GameObject.Find("Player").GetComponent<Transform>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public override void Interact()
     {
-
-        playerScale.localScale /= 2f;
-        // réduire la speed aussi
-        
-        //Destroy(this);
-
+        Destroy(this);
     }
 
 }
