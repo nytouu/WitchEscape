@@ -22,7 +22,7 @@ public class Interaction : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !stateScript.puzzleMode)
+        if (Input.GetMouseButtonDown(0) && !stateScript.GetPuzzleMode()) // check si objet interactif, si oui interaction
         {
 
             // Récupérer les coordonnées du centre de l'écran
@@ -43,12 +43,11 @@ public class Interaction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode puzzle
         {
-            if (stateScript.puzzleMode)
+            if (stateScript.GetPuzzleMode())
             {
-
                 lerpScript.MoveToTarget(Camera.main.transform, slotCamera);
 
-                stateScript.puzzleMode = false;
+                stateScript.QuitPuzzleMode();
             }
         }
     }

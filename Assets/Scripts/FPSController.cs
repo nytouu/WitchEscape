@@ -25,7 +25,7 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!stateModeScript.puzzleMode)
+        if (!stateModeScript.GetPuzzleMode())
         {   
             // Handle mouse input
             Vector2 mouseInput;

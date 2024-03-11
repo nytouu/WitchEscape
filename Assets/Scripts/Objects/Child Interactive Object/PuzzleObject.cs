@@ -26,7 +26,7 @@ public class PuzzleObject : InteractiveObject
 
     public override void Interact()
     {
-        stateModeScript.puzzleMode = true;
+        stateModeScript.EnterPuzzleMode();
         lerpScript.MoveToTarget(Camera.main.transform, transformChild);
     }
 
