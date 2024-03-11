@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
 	private bool canJump;
 
+	private StateMode stateScript;
+
 	[Header("Ground stuff")]
 	[SerializeField]
 	private LayerMask groundLayer;
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		stateScript = FindObjectOfType<StateMode>();
 		rb = GetComponent<Rigidbody>();
 		rb.freezeRotation = true;
 		ResetJump();
@@ -63,25 +66,34 @@ public class PlayerMovement : MonoBehaviour
 			groundLayer
 		);
 
-		// Handle input
-		keyboardInput.x = Input.GetAxisRaw("Horizontal");
-		keyboardInput.y = Input.GetAxisRaw("Vertical");
 
-		if (Input.GetKey(KeyCode.Space) && isGrounded && canJump)
+		if (!stateScript.puzzleMode)
 		{
-			canJump = false;
-			Jump();
-			Invoke(nameof(ResetJump), jumpCooldown);
-		}
+            // Handle input
+            keyboardInput.x = Input.GetAxisRaw("Horizontal");
+            keyboardInput.y = Input.GetAxisRaw("Vertical");
 
-		// Handle velocity
-		Vector3 currentVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+			Vector3 currentVelocity = new Vector3(keyboardInput.x, 0f, keyboardInput.y).normalized * moveSpeed * Time.deltaTime;
+            transform.Translate(currentVelocity);
 
-		if (currentVelocity.magnitude > moveSpeed)
-		{
-			Vector3 limitedVelocity = currentVelocity.normalized * moveSpeed;
-			rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
-		}
+            if (Input.GetKey(KeyCode.Space) && isGrounded && canJump)
+            {
+                canJump = false;
+                Jump();
+                Invoke(nameof(ResetJump), jumpCooldown); // Louis veut pas qu'on utilise Invoke
+            }
+
+			// Handle velocity
+			//Vector3 currentVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+
+            /*if (currentVelocity.magnitude > moveSpeed)
+			{
+				Vector3 limitedVelocity = currentVelocity.normalized * moveSpeed;
+				rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
+			}*/
+
+        }
 
 		// Apply drag
 		if (isGrounded)
@@ -96,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		// Move player
+		/*// Move player
 		moveDirection = orientation.forward * keyboardInput.y + orientation.right * keyboardInput.x;
 		if (isGrounded)
 		{
@@ -109,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
 				ForceMode.Force
 			);
 		}
+
 	}
 
 	private void Jump()
