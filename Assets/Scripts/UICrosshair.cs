@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class UICrosshair : MonoBehaviour
 {
+    // code à harmoniser avec le script Interaction
     private RaycastHit hit;
     private Camera playerCamera;
     private float rangeInteraction = 3f;
-    public Image crossHair;
+    public Sprite crossHair;
     public Sprite interactingCrosshair, baseCrosshair;
-    // Start is called before the first frame update
+
     void Start()
     {
         playerCamera = Camera.main;
+        crossHair = baseCrosshair;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Récupérer les coordonnées du centre de l'écran
+        // Récupère les coordonnées du centre de l'écran
         float centerX = Screen.width / 2f;
         float centerY = Screen.height / 2f;
         Ray ray = playerCamera.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
@@ -29,16 +30,16 @@ public class UICrosshair : MonoBehaviour
             // Vérifier si l'objet touché est un objet interactif
             if (hit.collider.gameObject.CompareTag("InteractiveObject") && hit.distance <= rangeInteraction)
             {
-                crossHair.sprite = interactingCrosshair;
+                crossHair = interactingCrosshair;
             }
             else
             {
-                crossHair.sprite = baseCrosshair;
+                crossHair = baseCrosshair;
             }
         }
         else
         {
-            crossHair.sprite = baseCrosshair;
+            crossHair = baseCrosshair;
         }
     }
 }
