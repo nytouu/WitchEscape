@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Objects/Child Interactive Object/ComplexObject.cs.meta
 guid: 4ef8540fb840c7a4e82e3bb2d37bc824
+=======
+guid: 09fac078c218f1d43a232b8db0bcc77c
+>>>>>>> origin/nayle:Assets/Scripts/Child Interactive Object/ComplexObject.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupObject : SimpleObject
+<<<<<<< HEAD:Assets/Scripts/Objects/Child Interactive Object/Child Simple Object/PickupObject.cs
 {
     private bool objectHeld;
 
@@ -12,6 +13,15 @@ public class PickupObject : SimpleObject
     }
 
     // Update is called once per frame
+=======
+
+{
+    void Start()
+    {
+        
+    }
+
+>>>>>>> origin/nayle:Assets/Scripts/Child Interactive Object/Child Simple Object/PickupObject.cs
     void Update()
     {
         
@@ -19,10 +29,15 @@ public class PickupObject : SimpleObject
 
     public override void Interact()
     {
+<<<<<<< HEAD:Assets/Scripts/Objects/Child Interactive Object/Child Simple Object/PickupObject.cs
         objectHeld = true;
     }
 
 
     // prévoir le code quand on lache l'objet
 
+=======
+        
+    }
+>>>>>>> origin/nayle:Assets/Scripts/Child Interactive Object/Child Simple Object/PickupObject.cs
 }

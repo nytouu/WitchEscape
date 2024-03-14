@@ -66,35 +66,34 @@ public class PlayerMovement : MonoBehaviour
 			groundLayer
 		);
 
+<<<<<<< HEAD
 
 		if (!stateScript.GetPuzzleMode()) // si joueur n'est pas en mode puzzle
+=======
+		if (!stateScript.puzzleMode)
+>>>>>>> origin/nayle
 		{
-            // Handle input
-            keyboardInput.x = Input.GetAxisRaw("Horizontal");
-            keyboardInput.y = Input.GetAxisRaw("Vertical");
+			// Handle input
+			keyboardInput.x = Input.GetAxisRaw("Horizontal");
+			keyboardInput.y = Input.GetAxisRaw("Vertical");
 
-			Vector3 currentVelocity = new Vector3(keyboardInput.x, 0f, keyboardInput.y).normalized * moveSpeed * Time.deltaTime;
-            transform.Translate(currentVelocity);
-
-            if (Input.GetKey(KeyCode.Space) && isGrounded && canJump)
-            {
-                canJump = false;
-                Jump();
-                Invoke(nameof(ResetJump), jumpCooldown); // Louis veut pas qu'on utilise Invoke
-            }
+			if (Input.GetKey(KeyCode.Space) && isGrounded && canJump)
+			{
+				canJump = false;
+				Jump();
+				Invoke(nameof(ResetJump), jumpCooldown); // Louis veut pas qu'on utilise Invoke
+			}
 
 			// Handle velocity
-			//Vector3 currentVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-			
-			
-            /*if (currentVelocity.magnitude > moveSpeed)
+			Vector3 currentVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+			if (currentVelocity.magnitude > moveSpeed)
 			{
 				Vector3 limitedVelocity = currentVelocity.normalized * moveSpeed;
 				rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
-			}*/
+			}
+		}
 
-        }
-		
 		// Apply drag
 		if (isGrounded)
 		{
@@ -108,13 +107,19 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		/*// Move player
+		// Move player
 		moveDirection = orientation.forward * keyboardInput.y + orientation.right * keyboardInput.x;
-		if (isGrounded){
+		if (isGrounded)
+		{
 			rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-		} else {
-			rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-		}*/
+		}
+		else
+		{
+			rb.AddForce(
+				moveDirection.normalized * moveSpeed * 10f * airMultiplier,
+				ForceMode.Force
+			);
+		}
 	}
 
 	private void Jump()

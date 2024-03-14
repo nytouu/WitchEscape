@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Objects/Child Interactive Object/Child Simple Object/PickupObject.cs.meta
 guid: a9b8a5583a78d984c8d869374b158c88
+=======
+guid: c4787382cff6a12449a08668cd2c4a6a
+>>>>>>> origin/nayle:Assets/Scripts/Child Interactive Object/Child Simple Object/PickupObject.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
