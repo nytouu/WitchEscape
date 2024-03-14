@@ -652,11 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2c7506da834cc1ab394de3782c46b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   cameraPosition: {fileID: 0}
-=======
-  cameraPosition: {fileID: 330585546}
---- !u!114 &330585549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -870,12 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: {x: 400, y: 400}
-<<<<<<< HEAD
   orientation: {fileID: 0}
-=======
-  orientation: {fileID: 330585546}
->>>>>>> origin/nayle
---- !u!4 &584728417
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

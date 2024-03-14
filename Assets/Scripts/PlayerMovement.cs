@@ -66,12 +66,9 @@ public class PlayerMovement : MonoBehaviour
 			groundLayer
 		);
 
-<<<<<<< HEAD
+
 
 		if (!stateScript.GetPuzzleMode()) // si joueur n'est pas en mode puzzle
-=======
-		if (!stateScript.puzzleMode)
->>>>>>> origin/nayle
 		{
 			// Handle input
 			keyboardInput.x = Input.GetAxisRaw("Horizontal");
