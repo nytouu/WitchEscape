@@ -17,14 +17,13 @@ public class Interaction : MonoBehaviour
         lerpScript = FindObjectOfType<Lerp>();
         stateScript = FindObjectOfType<StateMode>();
         playerCamera = Camera.main;
-        slotCamera = GameObject.Find("CameraHolder").GetComponent<Transform>();
+        slotCamera = GameObject.Find("Main Camera").GetComponent<Transform>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !stateScript.puzzleMode)
+        if (Input.GetMouseButtonDown(0) && !stateScript.GetPuzzleMode()) // check si objet interactif, si oui interaction
         {
-
             // Récupérer les coordonnées du centre de l'écran
             float centerX = Screen.width / 2f;
             float centerY = Screen.height / 2f;
@@ -43,12 +42,11 @@ public class Interaction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode puzzle
         {
-            if (stateScript.puzzleMode)
+            if (stateScript.GetPuzzleMode())
             {
-
                 lerpScript.MoveToTarget(Camera.main.transform, slotCamera);
 
-                stateScript.puzzleMode = false;
+                stateScript.QuitPuzzleMode();
             }
         }
     }

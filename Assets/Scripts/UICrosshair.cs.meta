@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3ac6f1244f438ad47a09d70f39f1380e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - crossHair: {instanceID: 0}
+  - interactingCrosshair: {fileID: 21300000, guid: 75d442e67decdc649954396db5edac90,
+      type: 3}
+  - baseCrosshair: {fileID: 21300000, guid: eebd2a36925209143b922ec60c456e71, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

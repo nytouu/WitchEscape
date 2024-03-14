@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class StateMode : MonoBehaviour
 {
-    public bool puzzleMode = false;
+    private bool puzzleMode;
 
 
     void Start()
     {
-        
+        puzzleMode = false;
     }
 
     void Update()
     {
-        
+
     }
+
+    public void QuitPuzzleMode()
+    {
+        puzzleMode = false;
+    }
+
+    public void EnterPuzzleMode()
+    {
+        puzzleMode = true;
+    }
+
+    public bool GetPuzzleMode()
+    {
+        return puzzleMode;
+    }
+
 }

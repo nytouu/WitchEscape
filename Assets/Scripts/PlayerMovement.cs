@@ -66,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
 			groundLayer
 		);
 
-		if (!stateScript.puzzleMode)
+
+
+		if (!stateScript.GetPuzzleMode()) // si joueur n'est pas en mode puzzle
 		{
 			// Handle input
 			keyboardInput.x = Input.GetAxisRaw("Horizontal");
