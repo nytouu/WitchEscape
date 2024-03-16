@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class TelescopeObject : PuzzleObject
 {
-    //private StateMode stateModeScript;
     private Camera CameraTelescope;
     private bool modeTelescope = false;
     private float moveSpeed = 0.05f;
     private Transform map;
-
-    //private Transform transformChild;
-    //private Lerp lerpScript;
 
     public override void Start()
     {
         base.Start();
         CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
         map = GameObject.Find("Map").GetComponent<Transform>();
-
     }
 
     void Update()
@@ -54,7 +49,7 @@ public class TelescopeObject : PuzzleObject
 
     public override void Interact()
     {
-        base.Interact(); //ne fonctionne pas bien ???
+        base.Interact();
         modeTelescope = true;
     }
 
