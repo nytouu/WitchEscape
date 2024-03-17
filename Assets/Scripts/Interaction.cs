@@ -12,6 +12,8 @@ public class Interaction : MonoBehaviour
     private float rangeInteraction = 3f;
     private Lerp lerpScript;
     private bool handFree = true;
+    private GameObject objectHeld;
+
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class Interaction : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !stateScript.GetPuzzleMode()) // check si objet interactif, si oui interaction
+        if (Input.GetMouseButtonDown(0) && !stateScript.GetPuzzleMode() &&!stateScript.GetAnalysisMode()) // check si objet interactif, si oui interaction
         {
             // Récupérer les coordonnées du centre de l'écran
             float centerX = Screen.width / 2f;
@@ -45,7 +47,7 @@ public class Interaction : MonoBehaviour
         {
             if (stateScript.GetPuzzleMode())
             {
-                lerpScript.MoveToTarget(Camera.main.transform, slotCamera);
+                lerpScript.MoveToTarget(Camera.main.transform, slotCamera); //bug actuellement à cause de cinemachine
 
                 stateScript.QuitPuzzleMode();
             }
@@ -60,6 +62,7 @@ public class Interaction : MonoBehaviour
     public void SetHandFree()
     {
         handFree = true;
+        SetObjectHeld(null);
     }
 
     public void SetHandBusy()
@@ -67,5 +70,14 @@ public class Interaction : MonoBehaviour
         handFree = false;
     }
 
+    public GameObject GetObjectHeld()
+    {
+        return objectHeld;
+    }
+
+    public void SetObjectHeld(GameObject obj)
+    {
+        objectHeld = obj;
+    }
 
 }

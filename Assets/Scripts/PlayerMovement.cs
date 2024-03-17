@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-		if (!stateScript.GetPuzzleMode()) // si joueur n'est pas en mode puzzle
+		if (!stateScript.GetPuzzleMode() && !stateScript.GetAnalysisMode()) // si joueur n'est pas en mode puzzle
 		{
 			// Handle input
 			keyboardInput.x = Input.GetAxisRaw("Horizontal");
