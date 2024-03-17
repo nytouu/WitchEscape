@@ -11,6 +11,7 @@ public class Interaction : MonoBehaviour
     private Transform slotCamera;
     private float rangeInteraction = 3f;
     private Lerp lerpScript;
+    private bool handFree = true;
 
     void Start()
     {
@@ -49,6 +50,21 @@ public class Interaction : MonoBehaviour
                 stateScript.QuitPuzzleMode();
             }
         }
+    }
+
+    public bool GetHandFree()
+    {
+        return handFree;
+    }
+
+    public void SetHandFree()
+    {
+        handFree = true;
+    }
+
+    public void SetHandBusy()
+    {
+        handFree = false;
     }
 
 

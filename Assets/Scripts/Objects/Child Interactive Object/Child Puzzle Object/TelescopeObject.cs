@@ -14,6 +14,7 @@ public class TelescopeObject : PuzzleObject
         base.Start();
         CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
         map = GameObject.Find("Map").GetComponent<Transform>();
+        //CameraTelescope.depth = 0;
     }
 
     void Update()

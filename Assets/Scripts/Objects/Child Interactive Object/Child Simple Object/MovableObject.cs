@@ -2,47 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MovableObject : SimpleObject
 {
 
     private Vector3 startPosition;
     private Quaternion startRotation;
+    [SerializeField]
     private Vector3 endPosition;
+    [SerializeField]
     private Quaternion endRotation;
 
-    public bool stateOpen = false;
+    private float delay = 1f;
+    private bool stateOpen = false;
+    private bool isMove = false;
 
-    private Transform transformChid;
-    private Lerp lerpScript;
+    private LerpObject lerpObjectScript;
 
-    // CREER UN TRANSFORM AU START DE L'OBJET ?
-
-    // CODE A REECRIRE POUR PRENDRE EN COMPTE LA POSITION DU CHILD
 
     void Start()
     {
-        transformChid = transform.GetChild(0);
-        lerpScript = FindObjectOfType<Lerp>();
+        lerpObjectScript = FindObjectOfType<LerpObject>();
         startPosition = transform.position;
         startRotation = transform.rotation;
     }
 
-    void Update()
-    {
-
-    }
     public override void Interact()
     {
-        if (!stateOpen)
+        if (!isMove)
         {
-            //lerpScript.MoveToTarget(transform, transformChild);
-            stateOpen = true;
+            isMove = true;
+            if (!stateOpen)
+            {
+                lerpObjectScript.MoveToTarget(transform, endPosition, endRotation);
+                stateOpen = true;
+            }
+            else
+            {
+                lerpObjectScript.MoveToTarget(transform, startPosition, startRotation);
+                stateOpen = false;
+            }
+            StartCoroutine(ResetIsMove(delay));
         }
-        else
-        {
-            //lerpScript.MoveToTarget(transform, transformStart);
-            stateOpen = false;
-        }
+        
+    }
+
+    IEnumerator ResetIsMove(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isMove = false;
+    }
+
+    public bool GetState()
+    {
+        return stateOpen;
     }
 }
