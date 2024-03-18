@@ -9,13 +9,15 @@ public class UICrosshair : MonoBehaviour
     private RaycastHit hit;
     private Camera playerCamera;
     private float rangeInteraction = 3f;
-    public Sprite crossHair;
-    public Sprite interactingCrosshair, baseCrosshair;
+    private Image crosshair;
+    private Sprite interactingCrosshair, baseCrosshair;
 
     void Start()
     {
         playerCamera = Camera.main;
-        crossHair = baseCrosshair;
+        crosshair = GameObject.Find("CrossHair").GetComponent<Image>();
+        interactingCrosshair = Resources.Load<Sprite>("interactingCrosshair");
+        baseCrosshair = Resources.Load<Sprite>("baseCrosshair");
     }
 
     void Update()
@@ -30,16 +32,16 @@ public class UICrosshair : MonoBehaviour
             // Vérifier si l'objet touché est un objet interactif
             if (hit.collider.gameObject.CompareTag("InteractiveObject") && hit.distance <= rangeInteraction)
             {
-                crossHair = interactingCrosshair;
+                crosshair.sprite = interactingCrosshair;
             }
             else
             {
-                crossHair = baseCrosshair;
+                crosshair.sprite = baseCrosshair;
             }
         }
         else
         {
-            crossHair = baseCrosshair;
+            crosshair.sprite = baseCrosshair;
         }
     }
 }
