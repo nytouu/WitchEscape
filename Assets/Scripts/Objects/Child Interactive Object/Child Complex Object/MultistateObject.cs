@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class MultistateObject : ComplexObject
 {
-    public int state; //état actuel
-    public int minState; //1er état, état le plus bas
+    [SerializeField]
+    protected int state; //état actuel
+    protected int minState = 1; //1er état, état le plus bas
     public int maxState; //nombre d'états max
 
-    void Start()
+    public virtual void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        if (state > maxState) //remise à zéro
-        {
-            state = minState;
-        }
-        
+        state = minState;
     }
 
     public override void Interact()
     {
         state++;
+        if (state > maxState) //remise à zéro
+        {
+            state = minState;
+        }
+    }
+
+    public virtual int GetState()
+    {
+        return state;
     }
 
 }
