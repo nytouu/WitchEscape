@@ -18,7 +18,7 @@ public class SlotObject : SimpleObject
         interactionScript = FindAnyObjectByType<Interaction>();
         objectOnSlot = null;
     }
-    
+
     public override void Interact()
     {
         // si objet tenu et slot vide
@@ -57,14 +57,15 @@ public class SlotObject : SimpleObject
         }
     }
 
+    public bool GetGoodObject()
+    {
+        return goodObject;
+    }
+
     public void SetSlotEmpty() //quand le slot se vide
     {
         slotEmpty = true;
         objectOnSlot = null;
         goodObject = false;
-
     }
-
-
-
 }
