@@ -37,7 +37,7 @@ public class PickupObject : SimpleObject
             }
             else
             {
-                //vérification si l'objet est en collision avec d'autres objets
+                //vérification si l'objet est en collision avec d'autres objets avec un trigger
 
                 interactionScript.SetHandFree();
                 rb.useGravity = true;
@@ -56,11 +56,20 @@ public class PickupObject : SimpleObject
             // possibilité 2 : un if selon le type de action possible, allumer bougie
         }
 
-        if ((Input.GetKeyDown(KeyCode.A)) && !stateScript.GetPuzzleMode() && objectHeld && !stateScript.GetAnalysisMode()) // analyse de l'objet
-        {
-            // passage en mode analyse
-            stateScript.EnterAnalysisMode();
+        if ((Input.GetKeyDown(KeyCode.Q)) && !stateScript.GetPuzzleMode() && objectHeld && !stateScript.GetAnalysisMode()) // analyse de l'objet
+        { 
+           if (!stateScript.GetAnalysisMode()) // passage en mode analyse
+            {
+                stateScript.EnterAnalysisMode();
+            }
+           else // sortie du mode analyse
+            {
+                stateScript.QuitAnalysisMode();
+            }
+            
 
+
+           
             // à coder
         }
 
@@ -79,6 +88,7 @@ public class PickupObject : SimpleObject
 
             transform.SetParent(parentTransform, false);
             transform.localPosition = localPosition;
+            transform.rotation = Quaternion.identity;
             rb.constraints = RigidbodyConstraints.FreezeAll;
 
             if (objectOnSlot) //si l'objet était sur un slot
