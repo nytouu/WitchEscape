@@ -14,7 +14,6 @@ public class PickupObject : SimpleObject
     private Rigidbody rb;
     private Transform parentTransform;
     private Vector3 localPosition = new Vector3(0.57f, 0f, 0.748f); //position relative au joueur quand l'objet est tenu
-    
 
     void Start()
     {
@@ -23,7 +22,6 @@ public class PickupObject : SimpleObject
         interactionScript = FindAnyObjectByType<Interaction>();
         rb = GetComponent<Rigidbody>();
         parentTransform = GameObject.FindWithTag("Player").transform;
-
     }
 
 
@@ -56,24 +54,18 @@ public class PickupObject : SimpleObject
             // possibilité 2 : un if selon le type de action possible, allumer bougie
         }
 
-        if ((Input.GetKeyDown(KeyCode.Q)) && !stateScript.GetPuzzleMode() && objectHeld && !stateScript.GetAnalysisMode()) // analyse de l'objet
+        if ((Input.GetKeyDown(KeyCode.Q)) && !stateScript.GetPuzzleMode() && objectHeld) // analyse de l'objet
         { 
            if (!stateScript.GetAnalysisMode()) // passage en mode analyse
-            {
-                stateScript.EnterAnalysisMode();
-            }
+           {
+               stateScript.EnterAnalysisMode();
+           }
            else // sortie du mode analyse
-            {
+           {
                 stateScript.QuitAnalysisMode();
-            }
-            
-
-
-           
+           }
             // à coder
         }
-
-
     }
 
     public override void Interact()
@@ -97,7 +89,6 @@ public class PickupObject : SimpleObject
                 slotScript.SetSlotEmpty(); // vidage du slot
                 objectOnSlot = false;
                 slot = null;
-                
             }
         }
     }
@@ -109,7 +100,6 @@ public class PickupObject : SimpleObject
         transform.parent = null;
         rb.detectCollisions = true;
         rb.constraints = RigidbodyConstraints.FreezeAll;
-
     }
 
     public void SetSlot(GameObject slotObj) //récupère le slotObject occupé, utile pour le vider en prenant l'objet directement
@@ -117,10 +107,7 @@ public class PickupObject : SimpleObject
         slot = slotObj;
     }
 
-
-
     // idéalement faire en sorte que l'objet suive à 80% la caméra sur l'axe vertical
     // faire bouger légèrement l'objet en main pour la respiration
     // condition pour remettre l'objet à sa position d'origine (si jamais il glitch)
-
 }

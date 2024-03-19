@@ -7,14 +7,13 @@ using UnityEngine;
 public class PuzzleObject : InteractiveObject
 {
     public StateMode stateModeScript;
-    public Transform transformChild;
-    public Lerp lerpScript;
+    private Transform transformChild;
+    private Lerp lerpScript;
 
     public virtual void Start()
     {
         lerpScript = FindObjectOfType<Lerp>();
         stateModeScript = FindObjectOfType<StateMode>();
-
         transformChild = transform.Find("View"); // recupere le transform de l'enfant "View"
         
     }
