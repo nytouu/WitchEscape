@@ -45,14 +45,20 @@ public class Interaction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode puzzle
         {
-            if (stateScript.GetPuzzleMode())
-            {
-                lerpScript.MoveToTarget(Camera.main.transform, slotCamera); //bug actuellement à cause de cinemachine
-
-                stateScript.QuitPuzzleMode();
-            }
+            QuitPuzzleMode();
         }
     }
+
+    public void QuitPuzzleMode()
+    {
+        if (stateScript.GetPuzzleMode())
+        {
+            lerpScript.MoveToTarget(Camera.main.transform, slotCamera); //bug actuellement à cause de cinemachine
+
+            stateScript.QuitPuzzleMode();
+        }
+    }
+
 
     public bool GetHandFree()
     {

@@ -8,6 +8,8 @@ public class MultistateObject : ComplexObject
     protected int state; //état actuel
     protected int minState = 1; //1er état, état le plus bas
     public int maxState; //nombre d'états max
+    private int targetState = 2;
+    private bool goodState = false;
 
     public virtual void Start()
     {
@@ -26,6 +28,23 @@ public class MultistateObject : ComplexObject
     public virtual int GetState()
     {
         return state;
+    }
+
+    public virtual void CheckGoodState()
+    {
+        if (state == targetState)
+        {
+            goodState = true;
+        }
+        else
+        {
+            goodState = false;
+        }
+    }
+
+    public bool GetGoodState()
+    {
+        return goodState;
     }
 
 }

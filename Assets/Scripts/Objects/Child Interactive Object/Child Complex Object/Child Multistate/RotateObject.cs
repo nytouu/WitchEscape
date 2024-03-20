@@ -12,6 +12,7 @@ public class RotateObject : MultistateObject
     private float delay = 0.7f;
     private Quaternion baseRotation;
     private Quaternion newRotation;
+ 
 
     public override void Start()
     {
@@ -46,9 +47,10 @@ public class RotateObject : MultistateObject
 
             // alternative au compte à rebours en checkant si l'objet bouge et tourne encore
             // un décalage se créé à chaque rotation
-
         }
     }
+
+    
 
     IEnumerator ResetIsRotate(float delay)
     {

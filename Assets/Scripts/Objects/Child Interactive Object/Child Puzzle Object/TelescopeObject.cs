@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
-public class TelescopeObject : PuzzleObject
+public class TObject : PuzzleObject
 {
-    private Camera CameraTelescope;
+    [SerializeField]
+    private CinemachineVirtualCamera cameraTelescope;
+
     private bool modeTelescope = false;
     private float moveSpeed = 0.05f;
     private Transform map;
@@ -12,7 +15,7 @@ public class TelescopeObject : PuzzleObject
     public override void Start()
     {
         base.Start();
-        CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
+        // CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
         map = GameObject.Find("Map").GetComponent<Transform>();
         //CameraTelescope.depth = 0;
     }
@@ -24,7 +27,7 @@ public class TelescopeObject : PuzzleObject
         {
             // wait quelques secondes pour que le lerp se fasse puis
 
-            CameraTelescope.depth = 2;
+            
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode telescope
             {
@@ -44,7 +47,8 @@ public class TelescopeObject : PuzzleObject
         }
         else
         {
-            CameraTelescope.depth = 0;
+            cameraTelescope.Priority = 0;
+
         }
     }
 
@@ -52,6 +56,7 @@ public class TelescopeObject : PuzzleObject
     {
         base.Interact();
         modeTelescope = true;
+        cameraTelescope.Priority = 15;
     }
 
 
