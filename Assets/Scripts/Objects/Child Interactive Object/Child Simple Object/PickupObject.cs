@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupObject : SimpleObject
-
 {
     private bool objectHeld;
+
     [SerializeField]
     private bool objectOnSlot = false;
     private GameObject slot = null;
@@ -23,7 +23,6 @@ public class PickupObject : SimpleObject
         rb = GetComponent<Rigidbody>();
         parentTransform = GameObject.FindWithTag("Player").transform;
     }
-
 
     void Update()
     {
@@ -49,22 +48,21 @@ public class PickupObject : SimpleObject
         if ((Input.GetKeyDown(KeyCode.E)) && !stateScript.GetPuzzleMode() && objectHeld) // Utilisation de l'objet
         {
             // dans ce script ou le script Interaction ?
-            
+
             // possibilité 1 : enfant de pickupObject
             // possibilité 2 : un if selon le type de action possible, allumer bougie
         }
 
-        if ((Input.GetKeyDown(KeyCode.Q)) && !stateScript.GetPuzzleMode() && objectHeld) // analyse de l'objet
-        { 
-           if (!stateScript.GetAnalysisMode()) // passage en mode analyse
-           {
-               stateScript.EnterAnalysisMode();
-           }
-           else // sortie du mode analyse
-           {
+        if ((Input.GetKeyDown(KeyCode.Q) && !stateScript.GetPuzzleMode() && objectHeld) && objectHeld) // analyse de l'objet
+        {
+            if (!stateScript.GetAnalysisMode()) // passage en mode analyse
+            {
+                stateScript.EnterAnalysisMode();
+            }
+            else // sortie du mode analyse
+            {
                 stateScript.QuitAnalysisMode();
-           }
-            // à coder
+            }
         }
     }
 
@@ -77,6 +75,7 @@ public class PickupObject : SimpleObject
             objectHeld = true;
             interactionScript.SetHandBusy();
             interactionScript.SetObjectHeld(gameObject);
+			transform.rotation = Quaternion.Euler(0, 180, 0);
 
             transform.SetParent(parentTransform, false);
             transform.localPosition = localPosition;

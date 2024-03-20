@@ -19,7 +19,7 @@ public class Interaction : MonoBehaviour
     {
         lerpScript = FindObjectOfType<Lerp>();
         stateScript = FindObjectOfType<StateMode>();
-        playerCamera = Camera.main;
+        playerCamera = FindObjectOfType<Camera>();
         slotCamera = GameObject.Find("Main Camera").GetComponent<Transform>();
     }
 
