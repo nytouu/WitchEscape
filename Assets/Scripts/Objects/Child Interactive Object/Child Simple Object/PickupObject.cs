@@ -17,6 +17,7 @@ public class PickupObject : SimpleObject
 
     void Start()
     {
+        typeOfPuzzle = "Pickup";
         objectHeld = false;
         stateScript = FindObjectOfType<StateMode>();
         interactionScript = FindAnyObjectByType<Interaction>();

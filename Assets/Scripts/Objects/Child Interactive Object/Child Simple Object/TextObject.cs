@@ -10,7 +10,7 @@ public class TextObject : SimpleObject
 
     void Start()
     {
-        
+        typeOfPuzzle = "Text";
     }
 
     // Update is called once per frame

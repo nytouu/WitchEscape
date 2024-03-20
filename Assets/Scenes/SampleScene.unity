@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004412b17b1a83148b3b8ecb28647fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   endPosition: {x: 10.42, y: -0.83, z: 16.1}
   endRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
 --- !u!65 &117018443
@@ -813,6 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f054c521f17d7941a87cd36111d66ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   stateModeScript: {fileID: 0}
 --- !u!65 &193318869
 BoxCollider:
@@ -1005,6 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b8a5583a78d984c8d869374b158c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   objectOnSlot: 0
 --- !u!65 &268708030
 BoxCollider:
@@ -1180,7 +1183,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.35, y: 0.89199996, z: 12.106}
+  m_LocalPosition: {x: -12.69, y: 0.96, z: 11.955019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1296,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060077afa6dd6c149873e730fa22ebd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   state: 1
   maxState: 8
   clockwise: 1
@@ -1671,6 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004412b17b1a83148b3b8ecb28647fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   endPosition: {x: 17.425, y: -0.446, z: 16.1}
   endRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!65 &543872247
@@ -2108,6 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064ec754ce36dd0409d8e31074a87f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   stateModeScript: {fileID: 0}
   targetObjects: []
   solutionList:
@@ -2205,6 +2211,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 164714446}
+  - {fileID: 1531072282}
   - {fileID: 721353853}
   - {fileID: 1532917946}
   - {fileID: 1430917992}
@@ -2643,6 +2650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1a7b7dce27e6c4aac5f01361f6cd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   slotEmpty: 1
   targetObject: {fileID: 1430958721}
   goodObject: 0
@@ -2764,6 +2772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004412b17b1a83148b3b8ecb28647fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   endPosition: {x: 6.36, y: -0.6, z: 16.1}
   endRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &891619961
@@ -3521,6 +3530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9651583c78c444083535d57f9124c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   stateModeScript: {fileID: 0}
   cameraTelescope: {fileID: 1808009213}
 --- !u!1 &1430917988
@@ -3688,6 +3698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b8a5583a78d984c8d869374b158c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   objectOnSlot: 0
 --- !u!65 &1430958724
 BoxCollider:
@@ -3775,6 +3786,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1531072281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531072282}
+  - component: {fileID: 1531072283}
+  m_Layer: 0
+  m_Name: Virtual Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531072282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531072281}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -28.1}
+  m_LocalScale: {x: 0.19694965, y: 0.19888425, z: 6.7467275}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1870419022}
+  m_Father: {fileID: 698552165}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531072283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531072281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 1870419022}
 --- !u!1 &1532917942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3912,6 +3995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1a7b7dce27e6c4aac5f01361f6cd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
   slotEmpty: 1
   targetObject: {fileID: 268708027}
   goodObject: 0
@@ -4283,6 +4367,101 @@ Transform:
   - {fileID: 94754882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1870419021
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870419022}
+  - component: {fileID: 1870419025}
+  - component: {fileID: 1870419024}
+  - component: {fileID: 1870419023}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870419022
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870419021}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1531072282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870419023
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870419021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!114 &1870419024
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870419021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &1870419025
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870419021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875965200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,6 +4811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19d0ae2e43a3aa4789449a88b7a7551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
 --- !u!65 &1961690524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4750,6 +4930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19d0ae2e43a3aa4789449a88b7a7551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfPuzzle: 
 --- !u!65 &1989661871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5085,7 +5266,7 @@ MonoBehaviour:
   jumpPower: 7
   gravity: 10
   lookSpeed: 2
-  lookXLimit: 80
+  lookXLimit: 90
 --- !u!143 &2061775117
 CharacterController:
   m_ObjectHideFlags: 0
