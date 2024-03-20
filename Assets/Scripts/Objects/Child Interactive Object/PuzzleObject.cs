@@ -9,6 +9,7 @@ public class PuzzleObject : InteractiveObject
     public StateMode stateModeScript;
     private Transform transformChild;
     private Lerp lerpScript;
+    public bool isPuzzle = true;
 
     public virtual void Start()
     {

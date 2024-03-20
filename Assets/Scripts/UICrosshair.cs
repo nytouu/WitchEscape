@@ -10,14 +10,17 @@ public class UICrosshair : MonoBehaviour
     private Camera playerCamera;
     private float rangeInteraction = 3f;
     private Image crosshair;
-    private Sprite interactingCrosshair, baseCrosshair;
+    private Sprite interactingCrosshair, baseCrosshair, puzzleCrosshair;
+    private PuzzleObject pO;
 
     void Start()
     {
         playerCamera = Camera.main;
-        crosshair = GameObject.Find("CrossHair").GetComponent<Image>();
-        interactingCrosshair = Resources.Load<Sprite>("interactingCrosshair");
-        baseCrosshair = Resources.Load<Sprite>("baseCrosshair");
+        pO = FindObjectOfType<PuzzleObject>();
+        crosshair = GameObject.Find("Crosshair").GetComponent<Image>();
+        interactingCrosshair = Resources.Load<Sprite>("InteractingCrosshair");
+        baseCrosshair = Resources.Load<Sprite>("BaseCrosshair");
+        puzzleCrosshair = Resources.Load<Sprite>("PuzzleCrosshair");
     }
 
     void Update()
@@ -29,15 +32,25 @@ public class UICrosshair : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            // Vérifier si l'objet touché est un objet interactif
+            //if (hit.distance <= rangeInteraction && pO.isPuzzle)
+            //{
+            //    crosshair.sprite = puzzleCrosshair;
+            //}
+            //else
+            //{
+            //    crosshair.sprite = baseCrosshair;
+            //}
+            //Vérifier si l'objet touché est un objet interactif
             if (hit.collider.gameObject.CompareTag("InteractiveObject") && hit.distance <= rangeInteraction)
             {
                 crosshair.sprite = interactingCrosshair;
             }
+
             else
             {
                 crosshair.sprite = baseCrosshair;
             }
+
         }
         else
         {
