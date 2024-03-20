@@ -4,30 +4,43 @@ using UnityEngine;
 
 public class PentacleProto : MonoBehaviour
 {
-	public List<SlotObject> candlesSlot;
-	public bool puzzleComplete;
+    [SerializeField]
+    private List<SlotObject> candlesSlot;
 
-	// Start is called before the first frame update
-	void Start()
-	{
-		puzzleComplete = false;
-	}
+    [SerializeField]
+    private bool puzzleComplete;
 
-	// Update is called once per frame
-	void Update()
-	{
-		bool ok = true;
-		foreach (SlotObject slot in candlesSlot)
-		{
-			if (!slot.GoodObject)
-			{
-				ok = false;
-			}
-		}
+    // Start is called before the first frame update
+    void Start()
+    {
+        puzzleComplete = false;
+    }
 
-		if (ok) {
+    // Update is called once per frame
+    void Update()
+    {
+        if (!puzzleComplete)
+        {
+            CheckForPuzzle();
+        }
+    }
 
-			puzzleComplete = true;
-		}
-	}
+    public void CheckForPuzzle()
+    {
+        bool ok = true;
+
+        foreach (var slot in candlesSlot)
+        {
+            if (!slot.GoodObject)
+            {
+                ok = false;
+            }
+        }
+
+        if (ok)
+        {
+            puzzleComplete = true;
+            Debug.Log("Puzzle Completed");
+        }
+    }
 }

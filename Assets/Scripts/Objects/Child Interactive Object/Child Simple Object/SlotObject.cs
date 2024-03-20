@@ -13,11 +13,11 @@ public class SlotObject : SimpleObject
 
 	[SerializeField]
 	private bool goodObject; //renvoie vrai si targetObject == objectOnSlot
-	public bool GoodObject { get; }
+	public bool GoodObject { get => goodObject; }
 
 	private Interaction interactionScript;
 
-	void Start()
+    void Start()
 	{
 		slotEmpty = true;
 		interactionScript = FindAnyObjectByType<Interaction>();
