@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TelescopeObject : PuzzleObject
+public class TObject : PuzzleObject
 {
     private Camera CameraTelescope;
     private bool modeTelescope = false;
@@ -24,7 +24,7 @@ public class TelescopeObject : PuzzleObject
         {
             // wait quelques secondes pour que le lerp se fasse puis
 
-            CameraTelescope.depth = 2;
+            
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode telescope
             {
@@ -52,6 +52,7 @@ public class TelescopeObject : PuzzleObject
     {
         base.Interact();
         modeTelescope = true;
+        CameraTelescope.depth = 2;
     }
 
 
