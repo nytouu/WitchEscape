@@ -36,14 +36,7 @@ public class WandObject : PuzzleObject
             {
                 wandMode = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                foreach (Transform child in transform)
-                {
-                    MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
-                    if (meshRenderer != null)
-                    {
-                        meshRenderer.enabled = false;
-                    }
-                }
+                DisplayMeshRenderer(false);
             }
 
             if (Input.GetMouseButton(0))
@@ -89,6 +82,7 @@ public class WandObject : PuzzleObject
                         Debug.Log("Alohomora !"); //sort réussi
                         solved = true;
                         targetObjects.Clear();
+                        DisplayMeshRenderer(false);
                         PuzzleSolved();
 
                         //quitte le mode puzzle et baguette
@@ -123,14 +117,7 @@ public class WandObject : PuzzleObject
         base.Interact();
         wandMode = true;
         Cursor.lockState = CursorLockMode.None;
-        foreach (Transform child in transform)
-        {
-            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
-            {
-                meshRenderer.enabled = true;
-            }
-        }
+        DisplayMeshRenderer(true);
     }
 
     public bool GetSolved()
@@ -141,6 +128,18 @@ public class WandObject : PuzzleObject
     private void PuzzleSolved()
     {
         lerpObjectScript.MoveToTarget(transform, endPosition, endRotation);
+    }
+
+   private void DisplayMeshRenderer(bool boolean)
+    {
+        foreach (Transform child in transform)
+        {
+            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                meshRenderer.enabled = boolean;
+            }
+        }
     }
 
 

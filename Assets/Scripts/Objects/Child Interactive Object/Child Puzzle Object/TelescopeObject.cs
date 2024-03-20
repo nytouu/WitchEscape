@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class TObject : PuzzleObject
 {
-    private Camera CameraTelescope;
+    [SerializeField]
+    private CinemachineVirtualCamera cameraTelescope;
+
     private bool modeTelescope = false;
     private float moveSpeed = 0.05f;
     private Transform map;
@@ -12,7 +15,7 @@ public class TObject : PuzzleObject
     public override void Start()
     {
         base.Start();
-        CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
+        // CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
         map = GameObject.Find("Map").GetComponent<Transform>();
         //CameraTelescope.depth = 0;
     }
@@ -44,7 +47,8 @@ public class TObject : PuzzleObject
         }
         else
         {
-            CameraTelescope.depth = 0;
+            cameraTelescope.Priority = 0;
+
         }
     }
 
@@ -52,7 +56,7 @@ public class TObject : PuzzleObject
     {
         base.Interact();
         modeTelescope = true;
-        CameraTelescope.depth = 2;
+        cameraTelescope.Priority = 15;
     }
 
 

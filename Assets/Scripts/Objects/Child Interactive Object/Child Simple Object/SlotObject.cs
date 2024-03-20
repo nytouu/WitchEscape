@@ -11,6 +11,8 @@ public class SlotObject : SimpleObject
     private GameObject targetObject; //Objet associé au slot object pour une énigme
     [SerializeField]
     private bool goodObject; //renvoie vrai si targetObject == objectOnSlot
+    public bool GoodObject { get => goodObject; }
+
     private Interaction interactionScript;
 
     void Start()
@@ -55,11 +57,6 @@ public class SlotObject : SimpleObject
         {
             goodObject = false;
         }
-    }
-
-    public bool GetGoodObject()
-    {
-        return goodObject;
     }
 
     public void SetSlotEmpty() //quand le slot se vide
