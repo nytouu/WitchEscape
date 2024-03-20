@@ -6,9 +6,8 @@ using Cinemachine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
-    [SerializeField]
+	[SerializeField]
     private CinemachineVirtualCamera playerCamera;
-
 
     [SerializeField]
     private float walkSpeed = 6f;
@@ -89,6 +88,5 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-        
     }
 }
