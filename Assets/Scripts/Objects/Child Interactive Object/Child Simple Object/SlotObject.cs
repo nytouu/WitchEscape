@@ -9,7 +9,7 @@ public class SlotObject : SimpleObject
 	private GameObject objectOnSlot;
 
 	[SerializeField]
-	private GameObject targetObject; //Objet associé au slot object pour une énigme
+	private GameObject targetObject; //Objet associï¿½ au slot object pour une ï¿½nigme
 
 	[SerializeField]
 	private bool goodObject; //renvoie vrai si targetObject == objectOnSlot
@@ -20,6 +20,8 @@ public class SlotObject : SimpleObject
     void Start()
 	{
 		slotEmpty = true;
+		typeOfPuzzle = "Slot";
+
 		interactionScript = FindAnyObjectByType<Interaction>();
 		objectOnSlot = null;
 	}
@@ -37,12 +39,12 @@ public class SlotObject : SimpleObject
 			interactionScript.SetHandFree();
 			slotEmpty = false;
 
-			//tp l'objet tenu sur le slot, à peaufiner selon l'épaisseur et l'orientation du slot
+			//tp l'objet tenu sur le slot, ï¿½ peaufiner selon l'ï¿½paisseur et l'orientation du slot
 			objectOnSlot.transform.position = transform.position + Vector3.up * 0.2f;
 
 			CheckGoodObject();
 		}
-		else if (!slotEmpty && interactionScript.GetHandFree()) // si slot occupé et main vide
+		else if (!slotEmpty && interactionScript.GetHandFree()) // si slot occupï¿½ et main vide
 		{
 			// on prend en main l'objet sur le slot
 			PickupObject pickupScript = objectOnSlot.GetComponent<PickupObject>();

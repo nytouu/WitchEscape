@@ -23,6 +23,7 @@ public class MovableObject : SimpleObject
 
     void Start()
     {
+        typeOfPuzzle = "Movable";
         lerpObjectScript = FindObjectOfType<LerpObject>();
         startPosition = transform.position;
         startRotation = transform.rotation;
