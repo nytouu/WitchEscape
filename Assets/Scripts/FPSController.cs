@@ -25,7 +25,7 @@ public class FPSController : MonoBehaviour
     private float lookSpeed = 2f;
 
     [SerializeField]
-    private float lookXLimit = 45f;
+    private float lookXLimit = 80f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -80,9 +80,9 @@ public class FPSController : MonoBehaviour
                 moveDirection.y -= gravity * Time.deltaTime;
             }
 
-            // Rotation
             characterController.Move(moveDirection * Time.deltaTime);
 
+            // Rotation
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
