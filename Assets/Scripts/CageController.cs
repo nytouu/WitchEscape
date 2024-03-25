@@ -14,6 +14,11 @@ public class CageController : MonoBehaviour
 	private CinemachineVirtualCamera playerCamera;
     private float rotationX = 0;
 
+	private CinemachineBrain brain;
+
+	[SerializeField]
+	private float transitionTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,8 @@ public class CageController : MonoBehaviour
         Cursor.visible = true;
 
 		playerCamera = GetComponent<CinemachineVirtualCamera>();
+
+		brain.m_DefaultBlend = new CinemachineBlendDefinition(CinemachineBlendDefinition.Style.EaseOut, transitionTime);
     }
 
     // Update is called once per frame
