@@ -24,7 +24,7 @@ public class Lerp : MonoBehaviour
             StopCoroutine(moveCoroutine);
 
         // Lancer une nouvelle coroutine pour déplacer la caméra vers la position cible
-        moveCoroutine = StartCoroutine(MoveCoroutine(target, targetDestination));
+        //moveCoroutine = StartCoroutine(MoveCoroutine(target, targetDestination));
     }
 
     private IEnumerator MoveCoroutine(Transform target, Transform targetDestination)

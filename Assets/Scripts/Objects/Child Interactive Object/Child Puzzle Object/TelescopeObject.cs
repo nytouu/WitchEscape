@@ -12,9 +12,11 @@ public class TelescopeObject : PuzzleObject
     public override void Start()
     {
         base.Start();
+<<<<<<< Updated upstream
         CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
+=======
+>>>>>>> Stashed changes
         map = GameObject.Find("Map").GetComponent<Transform>();
-        //CameraTelescope.depth = 0;
     }
 
     void Update()
@@ -44,14 +46,26 @@ public class TelescopeObject : PuzzleObject
         }
         else
         {
+<<<<<<< Updated upstream
             CameraTelescope.depth = 0;
+=======
+            
+
+>>>>>>> Stashed changes
         }
     }
 
     public override void Interact()
     {
         base.Interact();
+
         modeTelescope = true;
+<<<<<<< Updated upstream
+=======
+
+        //transition cut aussi, passage de blend à cut
+        //cameraTelescope.Priority = 15;
+>>>>>>> Stashed changes
     }
 
 

@@ -43,8 +43,9 @@ public class Interaction : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode puzzle
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) && stateScript.GetPuzzleMode()) // quitte le mode puzzle
         {
+<<<<<<< Updated upstream
             if (stateScript.GetPuzzleMode())
             {
                 lerpScript.MoveToTarget(Camera.main.transform, slotCamera); //bug actuellement à cause de cinemachine
@@ -54,6 +55,22 @@ public class Interaction : MonoBehaviour
         }
     }
 
+=======
+            QuitPuzzleMode();
+            
+        }
+    }
+
+    public void QuitPuzzleMode()
+    {
+        if (stateScript.GetPuzzleMode())
+        {
+            stateScript.QuitPuzzleMode();
+        }
+    }
+
+
+>>>>>>> Stashed changes
     public bool GetHandFree()
     {
         return handFree;
