@@ -228,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c38a0935fc4d099dbbf8124162e41792, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 6356805872040729651, guid: 0e30ce1cf625858b88982cc69fa887e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.87
+      value: -5.31
       objectReference: {fileID: 0}
     - target: {fileID: 6356805872040729651, guid: 0e30ce1cf625858b88982cc69fa887e9,
         type: 3}
@@ -636,7 +636,7 @@ PrefabInstance:
     - target: {fileID: 6356805872040729651, guid: 0e30ce1cf625858b88982cc69fa887e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.72
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 6356805872040729651, guid: 0e30ce1cf625858b88982cc69fa887e9,
         type: 3}
@@ -681,6 +681,11 @@ PrefabInstance:
     - target: {fileID: 7089848459892534190, guid: 0e30ce1cf625858b88982cc69fa887e9,
         type: 3}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582146345134968548, guid: 0e30ce1cf625858b88982cc69fa887e9,
+        type: 3}
+      propertyPath: objectOnSlot
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -740,7 +745,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 0.8660253
+  m_FocalLength: 0.66
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -755,7 +760,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 74.29337
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -955,7 +960,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4a6efda8c6b7914479cc858c4ae255e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1024,9 +1029,10 @@ GameObject:
   - component: {fileID: 1109895175}
   - component: {fileID: 1109895176}
   - component: {fileID: 1109895177}
+  - component: {fileID: 1109895178}
   m_Layer: 0
-  m_Name: Virtual Camera
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1064,16 +1070,16 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 31
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1055931460}
   m_Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 74.29337
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
-    ModeOverride: 3
+    ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
     FocusDistance: 10
@@ -1096,6 +1102,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3564c31ddbcf8ec438bc3567081d91a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1109895178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109895174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cddbea28b330bff07bb06512fb09378d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1533101458
