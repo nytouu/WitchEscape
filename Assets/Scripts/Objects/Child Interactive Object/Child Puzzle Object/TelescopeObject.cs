@@ -5,9 +5,6 @@ using Cinemachine;
 
 public class TObject : PuzzleObject
 {
-    [SerializeField]
-    private CinemachineVirtualCamera cameraTelescope;
-
     private bool modeTelescope = false;
     private float moveSpeed = 0.05f;
     private Transform map;
@@ -15,9 +12,7 @@ public class TObject : PuzzleObject
     public override void Start()
     {
         base.Start();
-        // CameraTelescope = GameObject.Find("CameraTelescope").GetComponent<Camera>();
         map = GameObject.Find("Map").GetComponent<Transform>();
-        //CameraTelescope.depth = 0;
     }
 
     void Update()
@@ -45,18 +40,12 @@ public class TObject : PuzzleObject
             // prévoir des bornes 
 
         }
-        else
-        {
-            cameraTelescope.Priority = 0;
-
-        }
     }
 
     public override void Interact()
     {
         base.Interact();
         modeTelescope = true;
-        cameraTelescope.Priority = 15;
     }
 
 

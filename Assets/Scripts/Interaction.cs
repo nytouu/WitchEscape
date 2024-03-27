@@ -43,7 +43,7 @@ public class Interaction : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode puzzle
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) && stateScript.GetPuzzleMode()) // quitte le mode puzzle
         {
             QuitPuzzleMode();
         }
