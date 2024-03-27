@@ -15,14 +15,14 @@ public class TextObject : SimpleObject
     private TextMeshProUGUI currentInteractionText;
     private Camera playerCamera;
 
-    
+
 
     void Start()
     {
         stateScript = FindObjectOfType<StateMode>();
 
         playerCamera = Camera.main;
-        currentInteractionText = FindObjectOfType<TextMeshProUGUI>(); 
+        currentInteractionText = FindObjectOfType<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

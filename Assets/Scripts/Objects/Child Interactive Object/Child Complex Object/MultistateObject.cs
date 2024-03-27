@@ -14,6 +14,7 @@ public class MultistateObject : ComplexObject
     public virtual void Start()
     {
         state = minState;
+        typeOfPuzzle = "Puzzle";
     }
 
     public override void Interact()

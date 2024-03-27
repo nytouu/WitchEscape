@@ -13,6 +13,7 @@ public class PuzzleObject : InteractiveObject
 
     public virtual void Start()
     {
+        typeOfPuzzle = "Puzzle";
         lerpScript = FindObjectOfType<Lerp>();
         stateModeScript = FindObjectOfType<StateMode>();
         transformChild = transform.Find("View"); // recupere le transform de l'enfant "View"
