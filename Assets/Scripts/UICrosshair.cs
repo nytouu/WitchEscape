@@ -9,13 +9,20 @@ public class UICrosshair : MonoBehaviour
     private RaycastHit hit;
     private Camera playerCamera;
     private float rangeInteraction = 3f;
-    public Sprite crossHair;
-    public Sprite interactingCrosshair, baseCrosshair;
+    private Image crossHair;
+    private Sprite interactingCrosshair, baseCrosshair, puzzleCrosshair;
+    private PuzzleObject pO;
+    private ComplexObject cO;
+    private SimpleObject sO;
 
     void Start()
     {
         playerCamera = Camera.main;
-        crossHair = baseCrosshair;
+        crossHair = GameObject.Find("Crosshair").GetComponent<Image>();
+        baseCrosshair = Resources.Load<Sprite>("BaseCrosshair");
+        interactingCrosshair = Resources.Load<Sprite>("InteractingCrosshair");
+        puzzleCrosshair = Resources.Load<Sprite>("PuzzleCrosshair");
+
     }
 
     void Update()
@@ -28,18 +35,26 @@ public class UICrosshair : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             // Vérifier si l'objet touché est un objet interactif
-            if (hit.collider.gameObject.CompareTag("InteractiveObject") && hit.distance <= rangeInteraction)
+            if (hit.collider.gameObject.GetComponent<PuzzleObject>() && hit.distance <= rangeInteraction)
             {
-                crossHair = interactingCrosshair;
+                crossHair.sprite = puzzleCrosshair;
+            }
+            else if (hit.collider.gameObject.GetComponent<ComplexObject>() && hit.distance <= rangeInteraction)
+            {
+                crossHair.sprite = interactingCrosshair;
+            }
+            else if (hit.collider.gameObject.GetComponent<SimpleObject>() && hit.distance <= rangeInteraction)
+            {
+                crossHair.sprite = interactingCrosshair;
             }
             else
             {
-                crossHair = baseCrosshair;
+                crossHair.sprite = baseCrosshair;
             }
         }
         else
         {
-            crossHair = baseCrosshair;
+            crossHair.sprite = baseCrosshair;
         }
     }
 }
