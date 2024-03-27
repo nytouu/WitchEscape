@@ -25,6 +25,7 @@ public class WandObject : PuzzleObject
     {
         base.Start();
         lerpObjectScript = FindObjectOfType<LerpObject>();
+        DisplayMeshRenderer(false);
     }
 
     void Update()
@@ -32,16 +33,16 @@ public class WandObject : PuzzleObject
 
         if (wandMode == true) 
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode baguette
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // Quitte le mode baguette
             {
                 wandMode = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                DisplayMeshRenderer(false);
+                DisplayMeshRenderer(false); //désactive les mesh et hitbox des enfants
             }
 
             if (Input.GetMouseButton(0))
             {
-                //baguette active
+                //Baguette active
 
                 Vector3 mousePosition = Input.mousePosition;
                 Ray ray = Camera.main.ScreenPointToRay(mousePosition);
@@ -52,7 +53,6 @@ public class WandObject : PuzzleObject
                     if (hit.transform.IsChildOf(transform) && hit.transform != transform)
                     {
                         GameObject targetObject = hit.collider.gameObject;
-
                         if (!targetObjects.Contains(targetObject))
                         {
                             targetObjects.Add(targetObject);
@@ -135,9 +135,15 @@ public class WandObject : PuzzleObject
         foreach (Transform child in transform)
         {
             MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
+            BoxCollider collider = child.GetComponent<BoxCollider>();
+
             if (meshRenderer != null)
             {
                 meshRenderer.enabled = boolean;
+            }
+            if (collider != null)
+            {
+                collider.enabled = boolean;
             }
         }
     }

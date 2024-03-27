@@ -9,6 +9,7 @@ public class Interaction : MonoBehaviour
     private RaycastHit hit;
     private StateMode stateScript;
     private Transform slotCamera;
+    [SerializeField]
     private float rangeInteraction = 3f;
     private Lerp lerpScript;
     private bool handFree = true;
@@ -53,9 +54,7 @@ public class Interaction : MonoBehaviour
     {
         if (stateScript.GetPuzzleMode())
         {
-            lerpScript.MoveToTarget(Camera.main.transform, slotCamera); //bug actuellement à cause de cinemachine
-
-            stateScript.QuitPuzzleMode();
+              stateScript.QuitPuzzleMode();
         }
     }
 

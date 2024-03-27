@@ -22,7 +22,6 @@ public class TObject : PuzzleObject
         {
             // wait quelques secondes pour que le lerp se fasse puis
 
-            
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) // quitte le mode telescope
             {

@@ -10,10 +10,12 @@ public class StateMode : MonoBehaviour
 
     private CinemachineVirtualCamera activeVirtualCamera;
     private CinemachineBrain cinemachineBrain;
+    private UICrosshair uiC;
 
 
     void Start()
     {
+        uiC = FindObjectOfType<UICrosshair>();
         puzzleMode = false;
         analysisMode = false;
         // faire des getter
@@ -31,6 +33,7 @@ public class StateMode : MonoBehaviour
         puzzleMode = false;
         activeVirtualCamera = cinemachineBrain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
         activeVirtualCamera.Priority = 0;
+        uiC.crossHair.gameObject.SetActive(true);
     }
 
     public void EnterPuzzleMode()

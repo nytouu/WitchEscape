@@ -646,37 +646,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &164714445
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 164714446}
-  m_Layer: 0
-  m_Name: View
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &164714446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164714445}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -28.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 698552165}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185994039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1113,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -1864,7 +1833,7 @@ RectTransform:
   m_GameObject: {fileID: 549573939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 601088416}
@@ -2460,7 +2429,6 @@ Transform:
   m_LocalScale: {x: 5.07744, y: 5.0280504, z: 0.14822}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 164714446}
   - {fileID: 1531072282}
   - {fileID: 721353853}
   - {fileID: 1532917946}
@@ -4090,7 +4058,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -4717,7 +4685,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -5734,6 +5702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3564c31ddbcf8ec438bc3567081d91a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeInteraction: 3
 --- !u!114 &2061775116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5791,6 +5760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac6f1244f438ad47a09d70f39f1380e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crossHair: {fileID: 0}
 --- !u!114 &2061775119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5961,7 +5931,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 1
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}

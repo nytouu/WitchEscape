@@ -9,7 +9,7 @@ public class UICrosshair : MonoBehaviour
     private RaycastHit hit;
     private Camera playerCamera;
     private float rangeInteraction = 3f;
-    private Image crossHair;
+    public Image crossHair;
     private Sprite interactingCrosshair, baseCrosshair, puzzleCrosshair;
     private PuzzleObject pO;
     private ComplexObject cO;
